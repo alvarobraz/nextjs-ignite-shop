@@ -1,56 +1,70 @@
-import { styled } from "..";
+import Link from 'next/link'
+import { styled } from '../index'
 
 export const SuccessContainer = styled('main', {
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
   justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
+  maxWidth: '590px',
   margin: '0 auto',
-  height: 656,
 
   h1: {
     fontSize: '$2xl',
-    color: '$gray100',
+    fontWeight: 'bold',
+    color: '$gray100'
+  },
+
+  '& .ProductsImagesContainer': {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1,
   },
 
   p: {
     fontSize: '$xl',
     color: '$gray300',
-    maxWidth: 560,
-    textAlign: 'center',
-    marginTop: '2rem',
-    lineHeight: 1.4,
+    lineHeight: '140%',
+    textAlign: 'center'
   },
 
-  a: {
-    display: 'block',
-    marginTop: '5rem',
-    fontSize: '$lg',
-    color: '$green500',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-
-    '&:hover': {
-      color: '$green300',
-    }
+  strong: {
+    color: '$gray100',
   }
-});
+})
 
 export const ImageContainer = styled('div', {
-  width: '100%',
-  maxWidth: 130,
-  height: 145,
-  background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-  borderRadius: 8,
-  padding: '0.25rem',
-  marginTop: '4rem',
+  width: '140px',
+  height: '140px',
+  borderRadius: '1000px',
+  background: 'linear-gradient(180deg, #1EA483 0%, #7465D4 100%)',
+  margin: '4rem 0 2rem',
+  boxShadow: '0px 0px 60px rgba(0, 0, 0, 0.8)',
+
 
   display: 'flex',
-  alignItems: 'center',
   justifyContent: 'center',
+  alignItems: 'center',
 
+  '&:not(:last-child)': {
+    marginRight: '-52px',
+  },
 
   img: {
-    objectFit: 'cover',
+    objectFit: 'cover'
   }
-});
+})
+
+export const LinkButton = styled(Link, {
+  textDecoration: 'none',
+  color: '$green500',
+  fontSize: '$md',
+  fontWeight: 'bold',
+  marginTop: '5.5rem',
+
+  '&:hover': {
+    color: '$green300',
+  }
+})
